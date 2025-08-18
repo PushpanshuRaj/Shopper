@@ -9,6 +9,10 @@ const ProductDsiplay =(props)=> {
       const {product}=props;
       const {addToCart} = useContext(ShopContext);
 
+      if (!product) {
+            return <div>Loading product...</div>; // or return null
+            }
+
       return(
             <div className="productdsiplay">
                   <div className="productdsiplay-left">

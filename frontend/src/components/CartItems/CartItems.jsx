@@ -7,7 +7,10 @@ const CartItems =()=> {
 
       const {getTotalCartAmount,all_product,cartItems,removeFromCart} = useContext(ShopContext);
 
+      console.log("Rendering cart:", all_product, cartItems);
+
       return(
+            
             <div className="cartitems">
                   <div className="cartitems-format-main">
                         <p>Products</p>
@@ -30,7 +33,8 @@ const CartItems =()=> {
                   {all_product.map((e)=>{
                         if(cartItems[e.id]>0){
                               return <div>
-                                      <div className="cartitems-format cartitems-format-main">
+                                      
+                                      <div key={e.id} className="cartitems-format cartitems-format-main">
                                       <img src={e.image} alt="" className="carticon-product-icon"/>
                                       <p>{e.name}</p>
                                       <p>${e.new_price}</p>
